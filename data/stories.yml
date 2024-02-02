@@ -1,0 +1,1246 @@
+version: "3.1"
+
+stories:
+  - story: happy path
+    steps:
+      - intent: greet
+      - action: utter_greet
+
+  - story: Bot loading initial message
+    steps:
+      - intent: initial_msg
+      - action: utter_intial_bot_message
+
+  - story: about_omfys
+    steps:
+      - intent: about_omfys
+      # - action: utter_about_omfys
+      - action: action_about_omfys
+      - action: action_home
+
+  - story: about_omfys story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: about_omfys
+      # - action: utter_about_omfys
+      - action: action_about_omfys
+      - action: action_home
+
+  - story: show omfys services
+    steps:
+      - intent: solutions_user_questions
+      - action: utter_omfys_services
+      - action: getdata_form
+      - active_loop: getdata_form
+      - slot_was_set:
+          - requested_slot: rpainfo
+      - slot_was_set:
+          - rpainfo: rpa_info
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_home
+
+  - story: show videos
+    steps:
+      - intent: videosss
+      - action: utter_videos
+      - action: action_custom_payload_two
+
+  - story: show omfys services
+    steps:
+      - intent: home_1
+      - action: utter_home
+      - intent: solutions_user_questions
+      - action: utter_omfys_services
+      - action: getdata_form
+      - active_loop: getdata_form
+      - slot_was_set:
+          - requested_slot: rpainfo
+      - slot_was_set:
+          - rpainfo: rpa_info
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_home
+
+  - story: show omfys services
+    steps:
+      - intent: home_1
+      - action: utter_home
+      - intent: solutions_user_questions
+      - action: utter_omfys_services
+      - action: getdata_form
+      - active_loop: getdata_form
+      - slot_was_set:
+          - requested_slot: rpainfo
+      - slot_was_set:
+          - rpainfo: rpa_info
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_home
+      # - action: utter_ask_for_more
+      # - intent: affirm
+      # - action: utter_user_permission
+      # - intent: affirm
+      # - action: action_comment_form_filling
+      # - intent: details_submitted
+      # - action: utter_rpa_accepted_values
+
+  - story: show omfys services
+    steps:
+      - intent: solutions_user_questions
+      - action: utter_omfys_services
+      - action: getdata_form
+      - active_loop: getdata_form
+      - slot_was_set:
+          - requested_slot: rpainfo
+      - slot_was_set:
+          - rpainfo: rpa_info
+      - slot_was_set:
+          - requested_slot: null
+      - active_loop: null
+      - action: action_home
+      # - intent: affirm
+      # - action: utter_user_permission
+      # - intent: affirm
+      # - action: action_custom_payload_form_two
+      # - intent: details_submitted
+      # - action: utter_rpa_accepted_values
+
+
+  - story: omfys_solution
+    steps:
+      - intent: omfys_solution
+      - action: utter_omfys_solution
+      - intent: indus_info
+        entities:
+        - ind_info: "bfsi_info"
+      - action: action_indus_info
+      - action: action_home
+  - story: omfys solution story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_solution
+      - action: utter_omfys_solution
+      - intent: indus_info
+        entities:
+        - ind_info: "bfsi_info"
+      - action: action_indus_info
+      - action: action_home
+
+  - story: contcat info docs
+    steps:
+      - intent: contact_info
+      - action: action_custom_payload_one
+      - action: utter_demo_values
+
+  - story: contcat info docs
+    steps:
+    - intent: contact_info
+    - action: action_custom_payload_one
+    - action: utter_demo_values
+    - intent: are_you_bot
+    - action: utter_are_you_bot
+
+  - story: contcat info docs
+    steps:
+    - intent: greet
+    - action: utter_greet
+    - intent: contact_info
+    - action: action_custom_payload_one
+    - action: utter_demo_values
+    
+  - story: deny story
+    steps:
+    - intent: deny
+    - action: utter_deny
+
+  - story: goodbye docs
+    steps:
+    - intent: goodbye
+    - action: utter_goodbye
+
+  - story: rpa docs
+    steps:
+      - intent: rpa_info_int
+      - action: action_custom_payload_rpa
+      - action: action_home
+      # - action: utter_ask_for_more
+      # - intent: affirm
+      # - action: utter_user_permission
+      # - intent: affirm
+      # - action: action_custom_payload_form_two
+      # - intent: details_submitted
+      # - action: utter_rpa_accepted_values
+
+  - story: oia docs
+    steps:
+      - intent: oia_info_int
+      - action: action_custom_payload_oia
+      - action: action_home
+      # - action: utter_ask_for_more
+      # - intent: affirm
+      # - action: utter_user_permission
+      # - intent: affirm
+      # - action: action_custom_payload_form_two
+      # - intent: details_submitted
+      # - action: utter_rpa_accepted_values
+
+  - story: oia docs
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: oia_info_int
+      - action: action_custom_payload_oia
+      - action: action_home
+      # - action: utter_ask_for_more
+      # - intent: affirm
+      # - action: utter_user_permission
+      # - intent: affirm
+      # - action: action_custom_payload_form_two
+      # - intent: details_submitted
+      # - action: utter_rpa_accepted_values
+
+  - story: oia docs
+    steps:
+      - intent: oia_info_int
+      - action: action_custom_payload_oia
+      - action: action_home
+      - action: utter_ask_for_more
+
+  - story: opa docs
+    steps:
+      - intent: opa_info_int
+      - action: action_custom_payload_opa
+      - action: action_home
+      # - action: utter_ask_for_more
+      # - intent: affirm
+      # - action: utter_user_permission
+      # - intent: affirm
+      # - action: action_custom_payload_form_two
+      # - intent: details_submitted
+      # - action: utter_rpa_accepted_values
+
+  - story: opa docs
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: opa_info_int
+      - action: action_custom_payload_opa
+      - action: action_home
+      # - action: utter_ask_for_more
+      # - intent: affirm
+      # - action: utter_user_permission
+      # - intent: affirm
+      # - action: action_custom_payload_form_two
+      # - intent: details_submitted
+      # - action: utter_rpa_accepted_values
+
+  - story: opa docs
+    steps:
+      - intent: opa_info_int
+      - action: action_custom_payload_opa
+      - action: action_home
+      # - action: utter_ask_for_more
+
+  - story: chatbot docs
+    steps:
+      - intent: chatbot_info_int
+      - action: action_custom_payload_chatbot
+      - action: action_home
+      # - action: utter_ask_for_more
+      # - intent: affirm
+      # - action: utter_user_permission
+      # - intent: affirm
+      # - action: action_custom_payload_form_two
+      # - intent: details_submitted
+      # - action: utter_rpa_accepted_values
+
+  - story: chatbot docs2
+    steps:
+      - intent: chatbot_info_int
+      - action: action_custom_payload_chatbot
+      - action: action_home
+      # - action: utter_ask_for_more
+
+  - story: bpm docs1
+    steps:
+      - intent: bpm_info_int
+      - action: action_custom_payload_bpm
+      - action: action_home
+      # - action: utter_ask_for_more
+      # - intent: affirm
+      # - action: utter_user_permission
+      # - intent: affirm
+      # - action: action_custom_payload_form_two
+      # - intent: details_submitted
+      # - action: utter_rpa_accepted_values
+
+  - story: bpm docs
+    steps:
+      - intent: bpm_info_int
+      - action: action_custom_payload_bpm
+      - action: action_home
+      # - action: utter_ask_for_more
+
+  - story: bsat docs1
+    steps:
+      - intent: bsat_info_int
+      - action: action_custom_payload_bsat
+      - action: action_home
+      # - action: utter_ask_for_more
+      # - intent: affirm
+      # - action: utter_user_permission
+      # - intent: affirm
+      # - action: action_custom_payload_form_two
+      # - intent: details_submitted
+      # - action: utter_rpa_accepted_values
+
+  - story: bsat docs2
+    steps:
+      - intent: bsat_info_int
+      - action: action_custom_payload_bsat
+      - action: action_home
+      # - action: utter_ask_for_more
+
+  - story: mobility docs
+    steps:
+      - intent: mobility_info_int
+      - action: utter_mobility_info
+      - action: action_home
+  #     - action: utter_ask_for_more
+  #     - intent: affirm
+  #     - action: utter_user_permission
+  #     - intent: affirm
+  #     - action: action_custom_payload_form_two
+  #     - intent: details_submitted
+  #     - action: utter_rpa_accepted_values
+
+  - story: mobility docs2
+    steps:
+      - intent: mobility_info_int
+      - action: utter_mobility_info
+      - action: action_home
+      # - action: utter_ask_for_more
+
+  - story: mla docs
+    steps:
+      - intent: mla_info_int
+      - action: action_custom_payload_mla
+      - action: action_home
+  #     - action: utter_ask_for_more
+  #     - intent: affirm
+  #     - action: utter_user_permission
+  #     - intent: affirm
+  #     - action: action_custom_payload_form_two
+  #     - intent: details_submitted
+  #     - action: utter_rpa_accepted_values
+
+  - story: mla docs2
+    steps:
+      - intent: mla_info_int
+      - action: action_custom_payload_mla
+      - action: action_home
+      # - action: utter_ask_for_more
+
+  - story: eai docs
+    steps:
+      - intent: eai_info_int
+      - action: action_custom_payload_eai
+      - action: action_home
+  #     - action: utter_ask_for_more
+  #     - intent: affirm
+  #     - action: utter_user_permission
+  #     - intent: affirm
+  #     - action: action_custom_payload_form_two
+  #     - intent: details_submitted
+  #     - action: utter_rpa_accepted_values
+
+  - story: document info docs
+    steps:
+      - intent: documents
+      - action: action_custom_payload_document
+      - action: utter_document
+  - story: document info docs
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: documents
+      - action: action_custom_payload_document
+      - action: utter_document
+      
+  - story: eai docs2
+    steps:
+      - intent: eai_info_int
+      - action: action_custom_payload_eai
+      - action: action_home
+      # - action: utter_ask_for_more
+
+  - story: story bot helping
+    steps:
+      - intent: bot_helping
+      - action: utter_bot_helping
+      - action: action_home
+
+  - story: story bot helping
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: bot_helping
+      - action: utter_bot_helping
+      - action: action_home
+
+  - story: story bot_not_helping
+    steps:
+      - intent: bot_not_helping
+      - action: utter_bot_not_helping
+      - action: action_home
+
+  - story: story are_you_bot
+    steps:
+      - intent: are_you_bot
+      - action: utter_are_you_bot
+      - action: action_home
+
+  - story: story are_you_bot
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: are_you_bot
+      - action: utter_are_you_bot
+      - action: action_home
+
+  - story: story who_built_you
+    steps:
+      - intent: who_built_you
+      - action: utter_who_built_you
+      - action: action_home
+
+  - story: rpa videos
+    steps:
+      - intent: home_1
+      - action: utter_home
+      - intent: demo_usecases
+      - action: utter_videos
+      - intent: rpa_demo
+      - action: action_custom_payload_two
+      - action: action_home
+
+  - story: chatbot videos
+    steps:
+      - intent: home_1
+      - action: utter_home
+      - intent: demo_usecases
+      - action: utter_videos
+      - intent: chatbot_demo
+      - action: action_custom_payload_two
+      - action: action_home
+
+  - story: opa videos
+    steps:
+      - intent: home_1
+      - action: utter_home
+      - intent: demo_usecases
+      - action: utter_videos
+      - intent: opa_demo
+      - action: action_custom_payload_two
+      - action: action_home
+
+  - story: story how are you
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: product_technology
+      - action: utter_product_technology
+  - story: story how are you
+    steps:
+      - intent: product_technology
+      - action: utter_product_technology
+
+  - story: omfys headoffice
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_head
+      - action: utter_omfys_head
+      - action: action_custom_payload_one
+  - story: omfys headoffice story2
+    steps:
+      - intent: omfys_head
+      - action: utter_omfys_head
+      - action: action_custom_payload_one
+
+  - story: hr contact
+    steps:
+      - intent: hr_contact
+      - action: utter_hr_contact
+
+  - story: hr contact story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: hr_contact
+      - action: utter_hr_contact
+
+  - story: employee count
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: employee_count
+      - action: utter_employee_count
+
+  - story: emp count story
+    steps:
+      - intent: employee_count
+      - action: utter_employee_count
+      
+
+  - story: omfys_product
+    steps:
+      - intent: omfys_product
+      - action: utter_omfys_product
+
+  - story: omfys_product story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_product
+      - action: utter_omfys_product
+
+  - story: story how are you
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: how_are_you
+      - action: utter_how_are_you
+  - story: story how are you
+    steps:
+      - intent: how_are_you
+      - action: utter_how_are_you
+  - story: story how are you
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_wave
+      - action: utter_omfys_wave
+  - story: story how are you
+    steps:
+      - intent: omfys_wave
+      - action: utter_omfys_wave
+  - story: what you do
+    steps:
+      - intent: what_you_do
+      - action: utter_what_you_do
+  - story: what you do story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: what_you_do
+      - action: utter_what_you_do
+  - story: your_location
+    steps:
+      - intent: your_location
+      - action: utter_your_location
+  - story: your_location story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: your_location
+      - action: utter_your_location
+
+  - story: rpa_implimentation
+    steps:
+      - intent: rpa_implementation
+      - action: utter_rpa_implementation
+  - story: rpa_implementation story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: rpa_implementation
+      - action: utter_rpa_implementation
+  - story: opa_implementation
+    steps:
+      - intent: opa_implementation
+      - action: utter_opa_implementation
+  - story: opa_implementation story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: opa_implementation
+      - action: utter_opa_implementation
+
+  - story: about customers
+    steps:
+      - intent: about_customers
+      - action: utter_about_customers
+  - story: about_customers story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: about_customers
+      - action: utter_about_customers
+
+  - story: digital_assistant
+    steps:
+      - intent: digital_assistant
+      - action: utter_digital_assistant
+  - story: digital assistant story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: digital_assistant
+      - action: utter_digital_assistant
+  - story: oracle_assistant
+    steps:
+      - intent: oracle_assistant
+      - action: utter_oracle_assistant
+  - story: oracle_assistant story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: oracle_assistant
+      - action: utter_oracle_assistant
+
+  - story: omfys_meaning
+    steps:
+      - intent: omfys_meaning
+      - action: utter_omfys_meaning
+  - story: omfys_meanig story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_meaning
+      - action: utter_omfys_meaning
+
+  - story: omfys_founder
+    steps:
+      - intent: omfys_founder
+      - action: utter_omfys_founder
+  - story: omfys_founder story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_founder
+      - action: utter_omfys_founder
+
+  - story: omfys_ceo
+    steps:
+      - intent: omfys_ceo
+      - action: utter_omfys_ceo
+  - story: omfys_ceo story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_ceo
+      - action: utter_omfys_ceo
+
+  - story: omfys_hr
+    steps:
+      - intent: omfys_hr
+      - action: utter_omfys_hr
+  - story: omfys_hr story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_hr
+      - action: utter_omfys_hr
+
+  - story: omfys_vacancies
+    steps:
+      - intent: omfys_vacancies
+      - action: utter_omfys_vacancies
+  - story: omfys_vacancies story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_vacancies
+      - action: utter_omfys_vacancies
+  
+
+  - story: omfys_chairman
+    steps:
+      - intent: omfys_chairman
+      - action: utter_omfys_chairman
+  - story: omfys_chairman story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_chairman
+      - action: utter_omfys_chairman
+
+  - story: omfys_director
+    steps:
+      - intent: omfys_director
+      - action: utter_omfys_director
+  - story: omfys_director story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_director
+      - action: utter_omfys_director
+
+  - story: omfys_management
+    steps:
+      - intent: omfys_management
+      - action: utter_omfys_management
+  - story: omfys management story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_management
+      - action: utter_omfys_management
+  - story: provide courses
+    steps:
+      - intent: provide_courses
+      - action: utter_provide_courses
+  - story: provide courses story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: provide_courses
+      - action: utter_provide_courses
+  - story: omfys partnership
+    steps:
+      - intent: omfys_partnership
+      - action: utter_omfys_partnership
+  - story: omfys partnership
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_partnership
+      - action: utter_omfys_partnership
+  - story: omfys timings
+    steps:
+      - intent: omfys_timings
+      - action: utter_omfys_timings
+  - story: omfys timings story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_timings
+      - action: utter_omfys_timings
+
+  - story: omfys_vision
+    steps:
+      - intent: omfys_vision
+      - action: utter_omfys_vision
+  - story: omfys vision story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_vision
+      - action: utter_omfys_vision
+  - story: omfys_mission
+    steps:
+      - intent: omfys_mission
+      - action: utter_omfys_mission
+  - story: omfys_mission story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_mission
+      - action: utter_omfys_mission
+
+  - story: omfys_start
+    steps:
+      - intent: omfys_start
+      - action: utter_omfys_start
+  - story: omfys_start story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_start
+      - action: utter_omfys_start
+
+  - story: award_membership story
+    steps:
+      - intent: award_membership
+      - action: utter_award_membership
+  - story: award_membership story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: award_membership
+      - action: utter_award_membership
+
+  - story: omfys_service_or_product
+    steps:
+      - intent: omfys_service_or_product
+      - action: utter_omfys_service_or_product
+  - story: omfys_service_or_product story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_service_or_product
+      - action: utter_omfys_service_or_product
+  - story: other_quetions story
+    steps:
+      - intent: other_questions
+      - action: utter_other_questions
+  - story: other_quetions story
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: other_questions
+      - action: utter_other_questions
+
+  - story: omfys_bas story
+    steps:
+      - intent: omfys_bas
+      - action: utter_omfys_bas
+  - story: omfys_bas story2
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: omfys_bas
+      - action: utter_omfys_bas
+  - story: mobility expertise story 1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: mobility_expertise
+      - action: utter_mobility_expertise
+  - story: mobility expertise story 2
+    steps:
+      - intent: mobility_expertise
+      - action: utter_mobility_expertise
+  - story: ai expertise story1
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: ai_expertise
+      - action: utter_ai_expertise
+  - story: ai expertise story2
+    steps:
+      - intent: ai_expertise
+      - action: utter_ai_expertise
+  - story: story flirt_chat2
+    steps:
+      - intent: flirt_chat
+      - action: utter_flirt_chat
+      - intent: flirt_chat
+      - action: utter_flirt_chat
+      - action: utter_flirt_stop
+  - story: story flirt_chat2
+    steps:
+      - intent: flirt_chat
+      - action: utter_flirt_chat
+  - story: story flirt_chat3
+    steps:
+      - intent: greet
+      - action: utter_greet
+      - intent: flirt_chat
+      - action: utter_flirt_chat
+      - intent: flirt_chat
+      - action: utter_flirt_chat
+      - action: utter_flirt_stop
+  - story: story flirt_chat
+    steps:
+      - intent: flirt_chat
+      - action: utter_flirt_chat
+      - intent: affirm
+      - action: utter_flirt_yes
+  - story: story flirt_chat
+    steps:
+      - intent: flirt_chat
+      - action: utter_flirt_chat
+      - intent: deny
+      - action: utter_deny
+
+
+  # - story: rpa demo 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: rpa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: rpa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: opa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+
+
+  # - story: rpa demo loop
+  #   steps:
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: rpa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: rpa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+
+  # - story: rpa demo 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: rpa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: deny
+  #     - action: utter_deny
+
+  # - story: opa demo 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: opa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: opa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: rpa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+
+  # - story: opa demo loop
+  #   steps:
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: opa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: opa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  # - story: opa demo 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: opa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: deny
+  #     - action: utter_deny
+
+  # - story: mobility demo 2
+  #   steps:
+  #     - action: utter_greet
+  #     - intent: greet
+  #     - intent: mobility_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: mobility_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: chatbot_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+
+  # - story: mobility demo loop
+  #   steps:
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: mobility_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: mobility_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+
+  # - story: mobility demo 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: mobility_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: deny
+  #     - action: utter_deny
+
+  # - story: aiml demo 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: aiml_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: aiml_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: opa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+
+  # - story: aiml demo loop
+  #   steps:
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: aiml_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: aiml_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+
+  # - story: aiml demo 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: aiml_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: deny
+  #     - action: utter_deny
+
+  # - story: chatbot demo 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: chatbot_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: chatbot_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: rpa_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+
+  # - story: chatbot demo loop
+  #   steps:
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: chatbot_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: affirm
+  #     - action: action_get_video_type
+  #     - intent: chatbot_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+
+  # - story: chatbot demo 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: chatbot_demo
+  #     - action: action_ask_user_permission
+  #     - intent: affirm
+  #     - action: action_comment_form_filling
+  #     - intent: details_submitted
+  #     - action: action_custom_payload_two
+  #     - intent: deny
+  #     - action: utter_deny
+
+
+
+  # - story: about_customer_implementation
+  #   steps:
+  #     - intent: about_customer_implementation
+  #     - action: utter_about_customer_implementation
+  #     - intent: affirm
+  #     - action: utter_user_permission
+  #     - intent: affirm
+  #     - action: action_custom_payload_form_two
+  #     - intent: details_submitted
+  #     - action: utter_rpa_accepted_values
+
+
+  # - story: job_openings sttory 2
+  #   steps:
+  #   - intent: job_openings
+  #   - action: utter_job_openings
+  #   - intent: affirm
+  #   - action: action_custom_payload_form_new
+  #   - intent: details_submitted
+  #   - action: utter_rpa_accepted_values
+  # - story: job_openings sttory 2
+  #   steps:
+  #   - intent: greet
+  #   - action: utter_greet
+  #   - intent: job_openings
+  #   - action: utter_job_openings
+  #   - intent: affirm
+  #   - action: action_custom_payload_form_new
+  #   - intent: details_submitted
+  #   - action: utter_rpa_accepted_values
+
+
+
+
+
+
+  # - story: demo use cases story 2
+  #   steps:
+  #     - intent: demo_usecases
+  #     - action: utter_detail
+  #     - intent: affirm
+  #     - action: utter_user_permission
+  #     - intent: affirm
+  #     - action: action_custom_payload_form_two
+  #     - intent: details_submitted
+  #     - action: utter_rpa_accepted_values
+
+  # - story: demo use cases story 2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: demo_usecases
+  #     - action: utter_detail
+  #     - intent: affirm
+  #     - action: utter_user_permission
+  #     - intent: affirm
+  #     - action: action_custom_payload_form_two
+  #     - intent: details_submitted
+  #     - action: utter_rpa_accepted_values
+
+
+
+  # - story: cost_product story2
+  #   steps:
+  #     - intent: cost_product
+  #     - action: utter_cost_product
+  #     - intent: affirm
+  #     - action: utter_user_permission
+  #     - intent: affirm
+  #     - action: action_custom_payload_form_two
+  #     - intent: details_submitted
+  #     - action: utter_rpa_accepted_values
+  # - story: cost_product story2
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: cost_product
+  #     - action: utter_cost_product
+  #     - intent: affirm
+  #     - action: utter_user_permission
+  #     - intent: affirm
+  #     - action: action_custom_payload_form_two
+  #     - intent: details_submitted
+  #     - action: utter_rpa_accepted_values
+
+
+
+  # - story: story how are you
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: sales_contact
+  #     - action: utter_user_permission
+  #     - intent: affirm
+  #     - action: action_custom_payload_form_two
+  #     - intent: details_submitted
+  #     - action: utter_rpa_accepted_values
+  # - story: story how are you
+  #   steps:
+  #     - intent: sales_contact
+  #     - action: utter_user_permission
+  #     - intent: affirm
+  #     - action: action_custom_payload_form_two
+  #     - intent: details_submitted
+  #     - action: utter_rpa_accepted_values
+  # - story: story how are you
+  #   steps:
+  #     - intent: greet
+  #     - action: utter_greet
+  #     - intent: sales_contact
+  #     - action: utter_user_permission
+  #     - intent: deny
+  #     - action: utter_deny
+  # - story: story how are you
+  #   steps:
+  #     - intent: sales_contact
+  #     - action: utter_user_permission
+  #     - intent: deny
+  #     - action: utter_deny
+
+
+  - story: confirm_partnership
+    steps:
+      - intent: ask_for_partnership
+      - action: action_affirm_deny_of_partnership

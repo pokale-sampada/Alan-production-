@@ -1,0 +1,1528 @@
+version: "3.1"
+
+nlu:
+  - intent: greet
+    examples: |
+      - hey
+      - hello
+      - hi
+      - good morning
+      - good evening
+      - hey there
+      - Hiii
+      - hiiiiiii
+
+  - intent: home_1
+    examples: |
+      - home
+      - restart
+      - refresh
+      - back
+      - end
+      - back to chat
+      - back to main menu
+      - show me home menu
+      - show me main menu
+      - Support
+      - help
+      - please assist
+
+  - intent: goodbye
+    examples: |
+      - bye
+      - goodbye
+      - see you around
+      - see you later
+      - good bye
+      - see you
+      - will meet again
+      - bye bye
+      - see yaa
+      - see you soon
+      - good day
+
+  - intent: affirm
+    examples: |
+      - yes
+      - indeed
+      - of course
+      - sure
+      - that sounds good
+      - correct
+      - yes sure
+      - yup
+      - yeah
+      - go ahed
+      - offcourse
+      - move on
+      - okay
+      - ok
+
+  - intent: deny
+    examples: |
+      - no
+      - never
+      - I don't think so
+      - don't like that
+      - no way
+      - not really
+      - No not interested
+      - NA
+      - not now
+      - i deny it
+      - deny
+
+  - intent: person_info
+    examples: |
+      - [gauri gaigole](person_name)
+      - [Shivani Gaigole](person_name)
+      - [Shivani](person_name)
+      - [nitish tadpatrikar](person_name)
+      - [vikhil khobragade](person_name)
+      - my name is [gauri gaigole](person_name)
+      - its shivani gaigole [shivani gaigole](person_name)
+      - Hey! my name is shivam [Shivam](person_name)
+      - [8007006287](person_mobile_number)
+      - [1234567895](person_mobile_number)
+      - [9823362002](person_mobile_number)
+      - my mobile number is 8007006287 [8007006287](person_mobile_number)
+      - mobile number is 1234567895 [1234567895](person_mobile_number)
+      - mob no is 9823362002 [9823362002](person_mobile_number)
+      - [shivanig10@gmail.com](person_email_id)
+      - [prathmesh0709kamble@redifmail.com](person_email_id)
+      - [sgarkamble@yahoo.com](person_email_id)
+      - my mail id is shivanig10@gmail.com [shivanig10@gmail.com](person_email_id)
+      - my id as follow prathmesh0709kambale@redifmail.com [prathmesh0709kamble@redifmail.com](person_email_id)
+      - its sgarkamble@yahoo.com [sgarkamble@yahoo.com](person_email_id)
+      - please provide me your contact number [please provide me your contact number](provide_comment)
+      - no thats it [no thats it](provide_comment)
+      - nothing [nothing](provide_comment)
+      - no more [no more](provide_comment)
+      - looking for your services [looking for your services](provide_comment)
+      - I am interested in your services [I am interested in your services](provide_comment)
+      - abcdefghijklmnop [abcdefghijklmnop](provide_comment)
+      - thats it [thats it](provide_comment)
+      - want to use your rpa service in my company [want to use your services in my company](provide_comment)
+      - intrested in your opa services [intrested in your opa services](provide_comment)
+      - intrested in your mobility services [intrested in your mobility services](provide_comment)
+      - intrested in your ai ml services [intrested in your ai ml services](provide_comment)
+      - intrested in your ai & ml services [intrested in your ai & ml services](provide_comment)
+      - intrested in your bsat services [intrested in your bsat services](provide_comment)
+      - intrested in your EAI services [intrested in your EAI services](provide_comment)
+      - intrested in your chatbot services [intrested in your chatbot services](provide_comment)
+      - intrested in your rpa services [intrested in your rpa services](provide_comment)
+      - want to know about your opa services [want to know about your opa services](provide_comment)
+      - want to know about your mobility services [want to know about your mobility services](provide_comment)
+      - want to know about your ai ml services [want to know about your ai ml services](provide_comment)
+      - want to know about ai & ml services [want to know about your ai & ml services](provide_comment)
+      - want to know about your bsat services [want to know about your bsat services](provide_comment)
+      - want to know about your EAI services [want to know about your EAI services](provide_comment)
+      - want to know about your chatbot services [want to know about your chatbot services](provide_comment)
+      - want to know about your rpa services [want to know about your rpa services](provide_comment)
+      - please contact me ASAP [please contact me ASAP](provide_comment)
+      - call me tomorrow [call me tomorrow](provide_comment)
+      - job openings [job openings](provide_comment)
+      - looking for job [looking for job](provide_comment)
+      - how are you [how are you](provide_comment)
+
+  - intent: stop
+    examples: |
+      - dont want to enter
+      - stop
+      - I dont want to enter
+      - I dont want to go in
+      - enquire for other
+      - no yar
+      - why should I provide this
+      - I will not provide this
+      - dont want to provide
+      - why should i bring it?
+      - why do i need this
+      - why should i give you this?
+      - why should i do that?
+      - why should i give it to you?
+      - ok then you cant help me
+      - that was shit, you're not helping
+      - you can't help me
+      - you can't help me with what i need
+      - i guess you can't help me then
+      - ok i guess you can't help me
+      - that's not what i want
+      - ok, but that doesnt help me
+      - this is leading to nothing
+      - this conversation is not really helpful
+      - you cannot help me with what I want
+      - I think you cant help me
+      - hm i don't think you can do what i want
+      - stop go back
+      - do you get anything?
+      - and you call yourself bot company? pff
+      - and that's it?
+      - nothing else?
+
+  - intent: initial_msg
+    examples: |
+      - start at initial
+      - load msg at startup
+
+  - intent: solutions_user_questions
+    examples: |
+      - Compentencies of the Omfys?
+      - What are the competencies of the Omfys?
+      - What is the omfys core competency?
+      - What are the core competencies of the company?
+      - Describe the capabilities of the omfys.
+      - What type of services are you offering?
+      - [rpa_info](rpainfo)
+      - [opa_info](rpainfo)
+      - [oia_info](rpainfo)
+      - [chatbot_info](rpainfo)
+      - [bpm_info](rpainfo)
+      - [eai_info](rpainfo)
+      - [mla_info](rpainfo)
+      - What services do you have?
+      - What solutions do you have?
+      - What services you provide?
+      - What solutions you provide?
+      - show me your services?
+      - may i know about your services?
+      - What services do you provide ?
+      - tell me about what services are you offering?
+      - you have any services?
+      - how can you help me ?
+      - can you help me ?
+      - what are you offers?
+      - tell me your offers
+      - what you can offers
+      - what all your services?
+      - tell me your services
+      - can you help me to improove my business?
+      - which services are you offfering
+      - which solutions are you offfering
+      - which services omfys is offering
+      - which solutions omfys is offering
+      - which are the services offered by omfys
+      - so tell me about your offerings
+      - what are the offering are you providing
+      - what type of services do you provide to customers
+      - what kind of services are delivered by you
+      - Do deliver software services
+      - what services are you doing?
+      - what kind of services do you offer?
+      - what kind of service do you offer?
+      - what kind of services are they offering?
+      - what kind of business offer are you offering?
+      - I want to know about which services provided by the omfys
+      - which services do you offer?
+      - what kind of service do you use?
+      - what kind of job are you offering?
+      - which services do you have?
+      - what kind of services do you have?
+      - what kind of service do you have?
+      - please tell me about your services
+      - could you please tell me about your services
+      - services
+      - solutions
+
+  - intent: videosss
+    examples: |
+      - video
+      - videosssssssssssssss
+      - used case videos
+      - videos of omfys
+      - show the videos
+      - show me used case videos
+      - vedios
+
+  - intent: contact_info
+    examples: |
+      - omfys office
+      - office
+      - place of omfys
+      - place of omfisss
+      - A description of Omfys's Location
+      - A description of Omfys
+      - How can I contact you
+      - can you provide me your contact details
+      - what are your contact details
+      - contact details
+      - contact number
+      - where is omfys located
+      - please provide me your contact number
+      - tell me your contact info
+      - office location
+      - how to reach your office
+      - how to reach office
+      - where are you located
+      - are you located in pune
+      - Omfys location
+      - omfys Location
+      - omfys location
+      - where is your office located
+      - how can i call you
+      - can i contcat you
+      - How much time will it take to reach your company office
+      - can you give me your contact number
+      - address
+      - omfys address
+      - omfys complete address
+      - address of your organisation
+      - show  me your address on google map
+      - can i get you your phone number?
+      - can i get your phone number?
+      - can my contact information be reached?
+      - may i contact your supervisor?
+      - can i have your phone number?
+      - you got any contact information?
+      - can i contact you?
+      - can i get your e-mail address?
+      - can i get your contacts at your?
+
+  - intent: rpa_info_int
+    examples: |
+      - What is RPA?
+      - RPA
+      - rpa
+      - what is rpa?
+      - tell me something about RPA
+      - tell me something about rpa
+      - tell me about rpa solutions
+      - may i know what is RPA?
+      - can you please tell me what is rpa?
+      - please tell me about rpa
+      - SO tell me about rpa
+      - are you provide rpa service?
+      - tell me about rpa
+      - tell me about robotic process automation
+      - Tell me information about RPA?
+      - is that a rpa? tell me about it.
+      - will you tell me the information i need about the rpa?
+      - do you want to tell me about the rpa?
+      - will you tell me about the rpa thing?
+      - tell me everything about the rpa.
+      - tell me what's rpa's information.
+      - did you tell me anything about rpa?
+      - 3rd
+      - three
+      - third
+      - third service
+      - 3rd service
+
+  - intent: oia_info_int
+    examples: |
+      - What is OIA?
+      - OIA
+      - oia
+      - oracle intelligent advisor
+      - so tell me about oracle intelligent advisor
+      - tell me omething aboutt oracle intelligent advisor
+      - tell me somethinng about OIA
+      - tell me about oia solutions
+      - may i know what is OIA?
+      - do you provide oia services
+      - are you provide oia services
+      - explain me something about oracle intelligent advisor
+      - tell me about oracle intelligent advisor
+      - tell me about OIA
+      - tell me infirmation about oia
+      - tell me more information about oia.
+      - tell me everything, information about oia.
+      - tell me the details about oia.
+      - so tell me about the oia
+      - tell me more about the oia project
+      - tell me about the oia protocol.
+      - tell me more about oia
+      - 1st
+      - first
+      - one
+      - first one service
+      - 1st service
+
+  - intent: opa_info_int
+    examples: |
+      - What is OPA?
+      - OPA
+      - opa
+      - oracle policy automation
+      - so tell me about oracle policy automation
+      - tell me omething aboutt oracle policy automation
+      - tell me somethinng about OPA
+      - tell me about opa solutions
+      - may i know what is OPA?
+      - do you provide opa services
+      - are you provide opa services
+      - tell me about oracle policy automation
+      - tell me infirmation about opa
+      - tell me more information about opa.
+      - tell me everything, information about opa.
+      - tell me the details about opa.
+      - so tell me about the opa
+      - tell me more about the opa project
+      - tell me about the opa protocol.
+      - tell me more about opa
+      - 7th
+      - seventh
+      - seven
+      - seventh service
+      - 7th service
+
+  - intent: chatbot_info_int
+    examples: |
+      - What is chatbot?
+      - Chatbot
+      - chatbot
+      - tell me about chatbot solutions
+      - may i know what is chatbots?
+      - so tell me something about chatbot
+      - do you provide chatbot services
+      - tell me about chatbots
+      - tell me about digital assistants
+      - tell me information about chatbots
+      - we want to tell the chatbot information.
+      - tell me about chatbots.
+      - tell me the information regarding the bots.
+      - he wants information about chatbots.
+      - two
+      - 2nd
+      - 22222
+      - 22222222
+      - Two
+      - TWO
+      - second service
+      - 2nd service
+
+  - intent: bpm_info_int
+    examples: |
+      - What is BPM?
+      - BPM
+      - bpm
+      - what is BPM
+      - tell me about bpm solutions
+      - may i know what is BPM?
+      - tell me about BPM
+      - would like to know about bpm?
+      - so tell me about bpm
+      - do you provide bpm solution
+      - could you please tell me about bpm
+      - I would like to know about bpm
+      - four
+      - 4th
+      - FOUR
+      - Four
+      - fourth service
+      - 4th service
+
+  - intent: bsat_info_int
+    examples: |
+      - What is bsat?
+      - BSAT
+      - tell me about bsat solutions
+      - may i know what is BSAT?
+      - tell me about BPM-BSAT
+      - BPM-BSAT
+      - would like to know about bsat?
+      - so tell me about bsat
+      - do you provide bsat solution
+      - could you please tell me about bsat
+      - I would like to know about basat
+      - four
+      - 4th
+      - FOUR
+      - Four
+      - fourth service
+      - 4th service
+
+  - intent: mobility_info_int
+    examples: |
+      - What is mobility?
+      - Mobility
+      - tell me about mobility solutions?
+      - may i know what is mobility?
+      - mobility solutions
+      - tell me about you mobility service
+      - do you  provide mobile application services
+      - could you please tell me about what is mobility
+      - how mobility  is working
+      - eight
+      - 8th
+      - 55555
+      - 55555555
+      - eighth
+      - eighth service
+      - 8th service
+
+  - intent: mla_info_int
+    examples: |
+      - What is MLA and AI?
+      - What is MLA & AI
+      - MLA & AI
+      - mla & AI
+      - MLA and AI
+      - mla and AI
+      - tell me about mla & ai?
+      - tell me about MLA & AI?
+      - tell me about mla and ai?
+      - may i know what is MLA & AI?
+      - may i know what is mla & ai?
+      - may i know what is MLA and AI?
+      - may i know what is mla and ai?
+      - what is artificila intellegence
+      - what is machine llearning
+      - tell me about machine learning and artificial intellegence
+      - tell me about artificial intellegence and machine learning
+      - six
+      - sixth
+      - 6th
+      - sixth service
+      - 6th service
+
+  - intent: eai_info_int
+    examples: |
+      - What is EAI solutions?
+      - What is EAI?
+      - What is eai solutions
+      - eai solutions
+      - EAI solutions
+      - EAI Solutions
+      - tell me about eai solutions?
+      - tell me about EAI solutions?
+      - tell me about EAI?
+      - may i know what is EAI solutions?
+      - may i know what is eai solutions?
+      - may i know what is EAI?
+      - may i know what is eai?
+      - five
+      - 5th
+      - 5
+      - fifth service
+      - 5th service
+  - intent: bot_helping
+    examples: |
+      - you are really helpful
+      - got it
+      - thank you
+      - Thank you
+      - THANK YOU
+      - thanks to you
+      - thank for the help
+      - nice one
+      - cool!
+      - great
+      - thanks for your help
+      - roger
+      - roger!
+      - Loving it
+      - awsome
+      - LOL!
+      - cool
+      - understand
+      - understood
+      - Happy birthday
+  - intent: bot_not_helping
+    examples: |
+      - you know nothing
+      - useless
+      - you don't know alot
+      - are you mad
+      - is that supposed to help me
+      - how is that helping
+      - what is the use of that
+      - This did not help me
+      - you don't know much
+      - you are not helping me much
+      - that did not help me
+      - you don't know do you
+      - what use is that
+      - That didn't help me
+      - you are not helping
+      - stupid
+  - intent: are_you_bot
+    examples: |
+      - You are a bot, are you
+      - who am I speaking to
+      - are you a bot?
+      - who are you ?
+      - what i your age ?
+      - what is your name ?
+      - are you a robot
+      - Are you a bot or a human?
+      - are you a girl
+      - you're not human, are you?
+      - You are a computer
+      - are you a boy
+      - are you a digital assistant
+      - Oh boy, you're a chatbot
+      - are you a chatbot
+      - are you a boy or a girl
+      - are you human
+      - Are you human?
+      - are you real
+      - Am I speaking with a chatbot?
+      - xou're not human, are you?
+      - Am I talking to a bot?
+  - intent: flirt_chat
+    examples: |
+      - I like to take you out
+      - would you like to slip into something more comfortable
+      - Would you like to go dancing with me
+      - hey babe tell me about yourself
+      - I like to ask you out
+      - Do you love me
+      - what are you wearing
+      - can you send me pictures of yourself
+      - are you a good lover
+      - Can I ask you out
+      - How do you kiss
+      - Will you go out for dinner with me?
+      - fancy a date
+      - Describe yourself to me please
+      - I wanna give you a hug. Where can I do this?
+      - Can I date you?
+      - will you join me for lunch?
+      - How do you like me?
+      - Do you want to kiss
+      - I wanna date you
+      - do you want to make love
+      - Imagine how you look
+      - I want to marry you
+      - Do you have a friend
+      - can you describe how you are looking?
+      - fancy going on a date
+      - Do you want to go to the movies with me?
+      - DO your company requires any hardware/machine services?
+      - Hello Alan,I want to buy a laptop can you show me the products.
+      - i want to buy laptop
+      - what is your favourite soccer team
+      - Who won the premier league?
+      - Who do you bet for in the play offs?
+      - do you like football
+      - Are you a fan of Manchester United
+      - What sport do you like?
+      - I am holding my break for the Philly Flyers
+      - Which hockey team do you support?
+      - What is your favourite soccer player?
+      - do you watch NHL, NBA or World Series?
+      - Do you watch ESPN, BBC sports or Euro sport
+      - Are you into football?
+      - Who do you are?
+      - Do you like sports
+      - cheer me up
+      - I am looking for something funny
+      - tell me a one liner
+      - Hey, tell me a joke
+      - Sure you don't know a joke
+      - Do you have more?
+      - cheer me up a bit
+      - Make me laugh
+      - I like to giggle a bit
+      - Are you funny?
+      - show me how funny you can be
+      - can you be funny?
+      - do you have something funny for me?
+      - how about jokes
+      - do you tell jokes
+      - What about a joke
+      - One more joke please
+      - do you have another one
+      - make me lough
+      - Give me another one
+      - is it going to be sunny all week
+      - What is the weather
+      - What's the weather like
+      - is there anything like bad weather
+      - Will it rain
+      - give me a weather quote
+      - What  is the weather like
+      - Its really hot in here
+      - How is the weather today
+      - Do you know if the sun is shining today?
+      - where do I find snow today
+      - We had a thunderstorm yesterday
+      - please forecast the weather for me
+      - will it train tomorrow
+      - Get me to where thunderstorms are
+      - Its cold outside, what do you think
+      - Where do you live?
+      - can you tell me about the weather tomorrow
+      - Do you have swimming pool in your office
+      - Do you drink coffee?
+      - How many cups do you drink per day?
+      - When do you drink coffee?
+      - Do you drink it at the same time every day?
+      - How do you like your coffee? Black or white? Sugar or no sugar?
+      - How do you feel when you drink coffee?
+      - How do you feel when you drink too much coffee?
+      - Many people think espresso is too bitter. Can you drink one?
+      - What’s your favorite coffee shop?
+      - Would you like to grab a coffee next week?
+      - I would love to meet for a coffee
+      - What is coffee? What is green coffee?
+      - I want to order electronics appliances
+  - intent: who_built_you
+    examples: |
+      - what technology were you built with
+      - who developed you?
+      - What were you developed on?
+      - what platform were you developed on?
+      - what platform are you based on
+      - what technology were you built
+      - Who built you?
+      - Who is your master?
+      - Who is the developer?
+      - Who is your master
+      - who developed you
+      - what platform are you built on
+      - Who built you
+
+      
+  - intent: rpa_demo
+    examples: |
+      - rpa demo
+      - rpa_demo
+      - show me demo of rpa
+      - show me rpa demo video
+      - can you please tell me how the rpa works with demo
+      - I would like to see demo of rpa
+      - robotic process automation demo
+      - show me demo for robotic process automation
+      - rpa video
+      - robotic process automation video
+      - show me video of rpa
+      - show me video demo of robotic process automation
+      - show me video demo of RPA
+      - show me rpa demonstration
+      - show me the rpa video preview
+      - show me an example of running rpa
+      - show me the video from the rpa.
+      - RPA Process
+      - rpa process
+      - what is process of rpa technologgy
+      - what is process of RPA technologgy
+  - intent: opa_demo
+    examples: |
+      - opa demo
+      - opa_demo
+      - oia demo
+      - oia videos
+      - show me Oia demo videos
+      - oracle inteligence adviser video
+      - show me demo of opa
+      - show me opa demo video
+      - can you please tell me how the opa works with demo
+      - I would like to see demo of opa
+      - oracle policy automation demo
+      - show me demo for robotic process automation
+      - opa video
+      - oracle policy automation video
+      - show me video of opa
+      - show me video demo of oracle policy automation
+      - show me video demo of OPA
+      - show me opa demonstration
+      - show me the opa video preview
+      - show me an example of running opa
+      - show me the video from the opa.
+      - OPA Process
+      - oia process
+      - opa process
+      - what is process of opa technologgy
+      - what is process of OIA technologgy
+  - intent: mobility_demo
+    examples: |
+      - mobility demo
+      - mobility_demo
+      - show me demo of mobility
+      - show me mobility demo video
+      - can you please tell me how the mobility works with demo
+      - I would like to see demo of mobility
+      - oracle policy automation demo
+      - show me demo for mobile applications
+      - mobility video
+      - mobile app video
+      - show me video demo of mobility
+      - show me mobility demonstration
+      - show me the mobility video preview
+      - show me an example of running mobiliy
+      - show me the video from the mobility.
+      - Mobility Process
+      - mobility Process
+      - what is process of mobility technologgy
+      - what is process of Mobility technologgy
+  - intent: chatbot_demo
+    examples: |
+      - chatbot demo
+      - chatbot_demo
+      - show me demo of chatbot
+      - show me chatbot demo video
+      - can you please tell me how the chatbot works with demo
+      - I would like to see demo of chatbot
+      - show me demo for chatbot
+      - chatbott video
+      - show me video of chatbots
+      - show me video demo of digital  assistants
+      - show me video demo of chatbots
+      - show me chatbots demonstration
+      - show me the chatbots video preview
+      - show me an example of running chatbots
+      - show me the video from the chatbots.
+      - Chatbot Process
+      - chatbot process
+      - what is process of chatbot technologgy
+      - what is process of Chatbot technologgy
+      - show me digital assistant video
+      - digital assistant video
+      - do you have digital assistant video demo
+      - video demo for digital assistant
+      - show me oda demo
+      - show me some videos of digital assistant.
+  - intent: aiml_demo
+    examples: |
+      - AI ML demo
+      - show me AI ML dem
+      - show me ai ml demo video
+      - can you please tell me how the ai ml works with demo
+      - I would like to see demo of ai mi
+      - artificial intelligence and machine learning demo
+      - show me demo for aRtificial intelligence and machine learniing
+      - ai ml video
+      - show me video demo of ai ml
+      - show me ai ml demonstration
+      - show me the ai ml video preview
+      - show me an example of running ai ml
+      - ai Process
+      - AI process
+      - ML Process
+      - ml process
+      - AI-ML Process
+      - AI ML Process
+      - ai-ml proess
+      - show me the video from the ai ml.
+      - what is process of AI ML technologgy
+      - what is process of ai ml technologgy
+  - intent: what_you_do
+    examples: |
+      - what you do
+      - What you Do
+      - What you do?
+      - what you do?
+      - what you can do?
+      - What omfys doing?
+      - What you can do?
+      - what you can do in software industries?
+
+  - intent: omfys_vacancies
+    examples: |
+      - How many vacancies are there in Omfys?
+      - What is the number of vacancies at Omfys?
+      - Omfys company vaccancies
+      - How many jobs are available at Omfys?
+      - In how many positions does Omfys have?
+      - Vacancies in OMFYS
+      - How many vacancies does OMFYS have?
+      - Omfys company vacancy rate
+      - Is there a lot of vacant positions at OMFYS?
+
+  - intent: your_location
+    examples: |
+      - Are you located in banglore
+      - are you located in hadapsar
+      - are you located in chennai
+      - are you located in mumbai
+      - are you located in chadigadh
+      - are you located in delhi
+      - are you located in nagpur
+      - are you located in amravati
+      - omfys banglore location
+      - omfys mumbai location
+      - are you located in
+      - are you located in ahemadnagar
+      - are you located in solapur
+  - intent: employee_count
+    examples: |
+      - how many employees do you have
+      - how much employees working in omfys?
+      - how much employeed people in omfys?
+      - How much staff in omfys company?
+      - How much workforce omfys have?
+      - How much employees in the omfys?
+      - how many employees are working in omfys
+      - how many employees works for omfys
+      - what is your employee count
+      - how many resources working in omfys
+      - what is the count of resources who are working in omfys
+      - how many employees do you have
+      - how many people do you have?
+      - how many employees do you have on the roster?
+      - how many employees do you have here?
+      - how many workers do you have?
+      - how many employees do you command?
+      - so, how many employees do you have there in the company?
+      - how many employees do you have on campus?
+      - how many employees are you working with?
+      - no of employee
+      - number of employee
+  - intent: about_customers
+    examples: |
+      - Who are all your customers
+      - who is you customers
+      - with which customer you are working
+      - your customer details
+      - all of your customers?
+      - who's your customer?
+      - who's your customers
+      - and your customers?
+      - who are all their customers?
+      - to whom you work in your job
+      - on which customer
+      - which customer you work for?
+      - which customer do you have
+      - you work for which customer
+      - with which customer you work for!
+      - who are your clients
+      - can you tell me about your clients
+      - could tell me who are your clients
+      - would like to know about your clients
+      - can you show the clients
+  - intent: about_customer_implementation
+    examples: |
+      - What did you implemented for Nissan Motors?
+      - what you implemented for nissan
+      - what you have done with nissan
+      - which technology you used for nissan motors
+      - What did you implemented for berger paints?
+      - what you implemented for berger paints
+      - what you have done with berger paint
+      - which technology you used for berger paint
+      - What did you implemented for Bajaj Electricals?
+      - what you implemented for bajaj electricals
+      - what you have done with bajaj electricals
+      - which technology you used for Bajaj Electricals?
+      - What did you implemented for India First Life Insurance?
+      - what you implemented for india first life insurance
+      - what you have done with india first life insurance
+      - which technology you used for India First Life Insurance?
+      - What did you implemented for Kirlosker Oil Engine?
+      - what you implemented for Kirlosker Oil Engine
+      - what you have done with kirlosker oil engine
+      - which technology you used for kirlosker oil engine
+
+  - intent: about_omfys
+    examples: |
+      - An overview of Omfys
+      - overview of Omfys
+      - Omfys overview
+      - Omfys quick overview
+      - brief introduction of Omfys
+      - introduction of Omfys
+      - brief Omfys introduction
+      - Omfys introduction
+      - A brief description of Omfys
+      - A brief description of Omfys
+      - omfys description
+      - brief omfys description
+      - Why are you special?
+      - Why are you special from others?
+      - why you think you are special?
+      - why you think you are special from others?
+      - why omfys?
+      - what is omfys?
+      - Why OMFYS?
+      - whya we choose omfys?
+      - why I choose omfys?
+      - How are you different?
+      - how are you different?
+      - how are you different from others?
+      - how you are diffrent from others?
+      - what is your usp?
+      - What is your usp?
+      - What is your USP?
+      - your USP
+      - about omfys
+      - So tell me about omfys
+      - tell me about Omfys
+      - what is omfys USP
+      - OMFYS USP
+      - what is your speciality
+      - what is special about you
+  - intent: omfys_meaning
+    examples: |
+      - what is meaning of omfys?
+      - meaning of word omfys?
+      - What is meaning of omfys?
+      - What is meaning of OMFYS?
+      - full form of omfys word?
+      - full form of word OMFYS?
+      - What is full form of word OMFYS?
+      - omfys abbrevation
+      - abbrevation of omfys
+      - what is abbreviation of omfys
+      - abbreviation of omfys meaning
+      - what omfys means for
+      - meaning of omfys word
+
+  - intent: omfys_start
+    examples: |
+      - when omfys got started
+      - when omfys opened
+      - When OMFYS got started...????
+      - when omfys started
+      - when omfys get started in India
+      - omfys opening year?
+      - omfys start date
+      - when your company got started
+      - when your company opened
+      - when your company started
+
+  - intent: omfys_founder
+    examples: |
+      - who is omfys founder?
+      - who is founder of omfys?
+      - who is the OMFYS founder?
+      - who is the founder of omfys?
+      - who is the boss of omfys
+      - who is founder of company
+      - founding member of omfys
+      - Owner of the omfys company
+      - Founder and owner of Omfys
+      - Omfys Owner
+      - In charge of omfys
+
+  - intent: omfys_ceo
+    examples: |
+      - CEO
+      - Founder and CEO of company
+      - who is ceo of company
+      - ceo of omfys
+      - who is the chief executive officer of omfys
+      - omfys ceo
+      - omfys chief executive officer
+
+  - intent: omfys_chairman
+    examples: |
+      - chairman
+      - The chairman of OMFYS
+      - name of chairperson
+      - what is name of your chirmen
+      - what is name of your chairman
+
+  - intent: omfys_hr
+    examples: |
+      - Hr
+      - Hr of company
+      - who is the hr of comapany
+      - Human resources
+      - Human resources of omfys
+      - hr of omfys
+      - name of the hr
+      - name of the hr department
+      - who is your hr 
+      - Identifying information for HR
+      - Recruiter's name
+      - Who is the recruiter in omfys?
+      - what is the the name of HR
+
+  - intent: omfys_director
+    examples: |
+      - who is director of company
+      - tell me about omfys director
+      - omfys director
+      - omfys director names
+      - directors of omfys
+      - Director of Omfys
+      - who is omfys director
+      - about omfys director
+
+  - intent: omfys_management
+    examples: |
+      - tell me about omfys management
+      - who are the management in the omfys
+      - who are the management team in the omfys
+      - about omfys management
+      - who is manager and director omfys technology
+      - omfys managing directors team
+      - about management
+      - who is your MD
+      - Managing director of omfys
+      - MD of omfys
+      - who is MD of omfys
+      - your managements
+      - leadership
+      - leaders
+      - leadership team of OMFYS
+      - who manages omfys
+      - Owners and partners of Omfys?
+
+  - intent: provide_courses
+    examples: |
+      - Do you provide any courses related to OPA or Digital Assistance or RPA
+      - Do you provide any courses
+      - Is omfys provide courses
+      - Do you provide courses of opa
+      - Do you provide courses for DA
+
+  - intent: omfys_partnership
+    examples: |
+      - who is the partner of omfys
+      - omfys partnership
+      - who is omfys partner
+      - partners of omfys
+      - partner
+      - OMFYS partners
+      - partner of omfys
+      - Which are the companys that are associated with the Omfys?
+
+  - intent: omfys_timings
+    examples: |
+      - what is timing of opening and closing in omfys
+      - omfys office hours
+      - office timings
+      - opening and closing timing of company
+      - opening and closing timing of omfys
+  - intent: omfys_head
+    examples: |
+      - where is your head office
+      - where is head office of omfys
+      - Head office of omfys
+      - omfys head office?
+      - Head office
+      - any other OMFYS branches
+      - where is omfys head office?
+  - intent: omfys_vision
+    examples: |
+      - what is vision of omfys
+      - vision of omfys
+      - omfys vision
+      - vision
+      - what is vission
+      - please tell me your vision
+      - tell me the vision
+      - what is your vission
+      - what is vision of your company
+      - vision of your company
+      - what is the vision of the omfys
+      - please tell me about your vision
+  - intent: omfys_mission
+    examples: |
+      - what is mission of omfys
+      - mission of omfys
+      - omfys mission
+      - mission
+      - what is mission
+      - what is your mission
+      - pllease tell me the mission
+      - tell about your mission
+      - what is mission of your company
+      - mission of your company
+      - mission and vision of omfys
+      - please tell me about your vision
+
+  - intent: omfys_solution
+    examples: |
+      - Where does Omfys company operate?
+      - Is omfys active in any specific business lines?
+      - Which business areas does Omfys compay operate in?
+      - Which areas of business does Omfys work in?
+      - Do you have any information about  the business areas Omfys is involved in?
+      - which are the industries omfys providing solution?
+      - In which industry omfys providing solutions?
+      - where omfys is providing solution?
+      - omfys solutions
+      - Industries where can approach omfys solution.
+      - industries which can approach to omfys for the solution
+      - Where can I approch omfys solution
+      - which industries can approach omfys solution
+      - and why is omfys providing solutions to all industries?
+      - which is omfys providing the solution?
+      - which industry omfys provides?
+      - which are the industries that omfys offers solutions for?
+      - what are the companies omfys offers solutions to?
+      - which industry omfys delivers?
+      - to which industries omfys provides?
+      - which are the undertakings omfys that offer solutions?
+      - which are the companies that omfys is supplying?
+      - I want to know more about industries with omfys works
+      - with which industries omfys works
+      - in which industries omfys works with
+      - industries works wit omfys
+
+  - intent: indus_info
+    examples: |
+      - [rpa_info]{(ind_info)
+      - [opa_info]{(ind_info)
+      - [oia_info]{(ind_info)
+      - [chatbot_info]{(ind_info)
+      - [bpm_info]{(ind_info)
+
+  - intent: demo_usecases
+    examples: |
+      - can I get demo of your RPA use case
+      - can I get demo of your opa use cases
+      - can I get demo of your mobility use cases
+      - can I get demo of your oracle intelligent advisor
+      - can you share me your rpa use cases
+      - Can you share me your artificial intellegence use cases
+      - Can you share me your machine learning use cases
+      - can i get demonstarion of use cases implement by you
+      - I want demonstarion of your all use cases
+      - omfys use cases
+      - what type of use cases you have implemented
+      - what are the use cases you have implemented
+      - rpa use cases
+      - have you developed use cases
+      - have developed any case studies
+      - show me what are the case studies have you developed
+      - RPA use cases
+      - shoe me RPA use cases
+      - could you show me the demo use
+      - show me case studies
+      - case studies
+      - show me your some case studies
+      - which case studies you have implemented
+      - what are the case studis implemanted in omfys
+      - omfys case studies
+      - can i get demo of your some of the case studies
+      - could you share me your case studies
+      - so what are the case studies you have implemented
+      - what are the case studies you have implemented for opa
+      - what are the case studies you have implemented for rps
+      - what are the case studies you have implemented for ai
+      - what are the case studies you have implemented for ml
+      - what are the case studies you have implemented for mobility
+      - what are the case studies you have implemented for bsat
+      - what are the case studies you have implemented for erp system
+      - what are the case studies you have implemented for artificial intellegence
+      - what are the case studies you have implemented for machine learning
+      - what are the case studies you have implemented for chatbot
+      - what are the case studies you have implemented for digital assistant
+      - what are the case studies you have implemented for da
+  - intent: hr_contact
+    examples: |
+      - can I get companys hr number
+      - how can I contact to hr
+      - I want hr contact details
+      - conatct numeber of HR
+      - Hr department contact number
+  - intent: job_openings
+    examples: |
+      - Do you have job openings
+      - do you have opening for job
+      - Is there any openings
+      - Is there any openings available for job
+      - Is there any vacancy
+      - Is there any vacancy available
+  - intent: award_membership
+    examples: |
+      - omfys award membership
+      - Awards of omfys
+      - Awards
+      - Membership
+      - Omfys Membership
+      - award and membership
+      - award and membership of omfys
+      - membership and awards of omfys
+      - omfys awards and membership
+  - intent: ask_rephrase
+    examples: |
+      - ask rephrase
+      - ask rephrasSe
+      - Ask Rephrase
+      - ask Rephrase
+      - Ask re-phrase
+  - intent: cost_product
+    examples: |
+      - What's the Cost of OMFYS products like OMFYS BAS, OMFYS BSAT and OMFYS WAVE, OMFYS ChatBot
+      - What's the Cost of OMFYS solutions like RPA implementation, OPA/ODA implementation?
+      - Cost of omfys solution
+      - cost of omfys products
+      - cost of omfys products and solutions
+      - what is cost of bas
+      - What's the Cost of OMFYS products
+      - the costs of omfys products
+      - what's the price of omfys'products?
+      - what's the cost for omfys products?
+      - What's the Cost of OMFYS solution
+      - the costs of omfys solution
+      - what's the price of omfys solution?
+      - what's the cost for omfys soltions?
+  - intent: omfys_product
+    examples: |
+      - What are the OMFYS products?
+      - omfys products
+      - what are omfys product
+      - which are the omfys product
+      - what do omfys products mean?
+      - what are these omfys products for?
+      - what are you doing with these omfys products?
+      - what are the omfys things for?
+  - intent: omfys_service_or_product
+    examples: |
+      - Is this company is service based or product based
+      - Is your company is service based or product based
+      - Is the omfys is service based or product based
+      - omfys is service based or product based company
+      - what are the omfys services and products
+      - the company is a service-based product
+      - is it a service based or a product based
+      - it doesn't have a service, it's a service, a product, or it '
+      - this company is based on a service or a product
+      - does this company make its goods or services based on customer service
+      - this company is made up of services or products based for
+      - the company is based on service or product
+      - is this the company is based solely on the service
+  - intent: other_questions
+    examples: |
+      - What is the positive and negative points about your company
+      - Can I see good growth working in this company?
+      - if I am a fresher then I will undergo training or not?
+      - pf and esi will be given or not?
+      - salary package in OMFYS
+      - they provide accomodation like bus and canteen or not
+      - accomodation?
+      - canteen?
+      - do you provide accomdation
+      - do you have canteen your office?
+      - what is salary range in your company
+      - you have pf and esi policies
+      - accomdation and canteen
+      - you have cab facilty
+      - do you have IOT
+      - do you provide IOT solution
+      - IOT solutions
+      - Internet of things servvice
+      - Do you provide IOT
+  - intent: omfys_bas
+    examples: |
+      - what is omfys BAS
+      - tell me about omfys BAS
+      - Omfys BAS
+      - What is omfys BAS IRP System
+      - BAS IRP system
+      - could you tell me about bas IRP systems
+      - how to use bas IRP
+  - intent: mobility_expertise
+    examples: |
+      - are you into mobile app development
+      - do you have mobility experts
+      - do you develope mobile app
+      - Is omfys has mobility experts
+      - have you developed mobile app
+      - do you implement mobility
+      - do you implement mobile applications
+      - do you implement mobile app
+      - have you implemented mobile apps
+      - have you implemented mobile applications
+      - do you have expertise in mobile app development
+      - do you have expertise in mobility
+      - Is you have developed mobility
+      - mobility expertise
+      - mobility expertise in omfys
+      - so tell me about your mobility expertise
+  - intent: rpa_implementation
+    examples: |
+      - are you into robotic process automation
+      - do you have robotic process automation experts
+      - do you develope robotic process automation
+      - Is omfys has robotic process automation experts
+      - have you developed robotic process automation
+      - do you implement robotic process automation
+      - have you implemented robotic process automation
+      - do you have expertise in robotic process automation development
+      - do you have expertise in robotic process automation
+      - Is you have developed robotic process automation
+      - robotic process automation expertise
+      - robotic process automation expertise in omfys
+      - so tell me about your robotic process automation
+      - are you into rpa
+      - do you have rpa experts
+      - do you develope rpa
+      - Is omfys has rpa experts
+      - have you developed rpa
+      - do you implement rpa
+      - have you implemented rpa
+      - do you have expertise in rpa development
+      - do you have expertise in rpa
+      - Is you have developed rpa
+      - rpa expertise
+      - rpa expertise in omfys
+      - so tell me about your expertise in rpa
+  - intent: opa_implementation
+    examples: |
+      - are you into oracle policy automation
+      - do you have oracle policy automation experts
+      - do you develope oracle policy automation
+      - Is omfys has oracle policy automation
+      - have you developed oracle policy automation
+      - do you implement oracle policy automation
+      - have you implemented oracle policy automation
+      - do you have expertise in oracle policy automation development
+      - do you have expertise in oracle policy automation
+      - Is you have developed oracle policy automation
+      - oracle policy automation expertise
+      - oracle policy automation expertise in omfys
+      - so tell me about your oracle policy automation
+      - are you into opa
+      - do you have opa experts
+      - do you develope opa
+      - Is omfys has opa experts
+      - have you developed opa
+      - do you implement opa
+      - have you implemented opa
+      - do you have expertise in opa development
+      - do you have expertise in opa
+      - Is you have developed opa
+      - opa expertise
+      - opa expertise in omfys
+      - so tell me about your expertise in opa
+  - intent: digital_assistant
+    examples: |
+      - Do you implement digital assistant?
+      - do you implement chatbots?
+      - do you implement chat bots?
+      - do you implement Chat Bots?
+      - which are the use cases you implemented digital assistant
+      - what are the digital assistant use cases
+      - digital assistant use cases
+      - what are the use cases you have implemented for digital assistant
+      - chat bot use cases
+      - chatbot use cases
+      - what are the chat bot use cases you have implemented
+      - what are the use cases you have implemented for chatbots?
+      - Chat Bot use cases
+      - which use cases you have build for chatbots
+      - which use case you have implemented for chatbot or DA
+      - DA use cases implemented by omfys
+      - what are the digital assistant use cases developed in omfys?
+      - do you implement da
+      - do you impement DA
+      - have you implementated DA
+      - have you implementated da
+      - do you have da
+      - do you have digital assistant
+  - intent: oracle_assistant
+    examples: |
+      - Do you implement ODA?
+      - Do you implement oracle digital assistant?
+      - do you have implement ODA
+      - do you have implemented oracle digital assistant
+      - oracle digital assistant implementation in omfys?
+      - have you implemented oracle digital assitant in omfys?
+      - do you have expertise in oda
+      - so tell me about your expertise in oda
+      - do you have expertise in oracle diigital assistant
+      - do you have expertise in oracle digital assistant
+      - are you expert in oda development
+      - are you expert in oracle digital assistant development
+  - intent: ai_expertise
+    examples: |
+      - are you into artificial intelligence development
+      - are you into ai development
+      - are you into machine learning development
+      - are you into ml development
+      - are you into artificial intelligence and machine learning development
+      - are you into ai and ml development
+      - are you into ml and ai development
+      - are you into AI & ML development
+      - do you have aritificial intelligence experts
+      - do you have machine learning experts
+      - do you have ai experts
+      - do you have ml experts
+      - do you develope ai & ml
+      - Is omfys has ai & ml experts
+      - have you developed ai & ml
+      - do you implement ai & ml
+      - do you implement ai
+      - have you implemented ai & ml
+      - do you have expertise in ai & ml
+      - Is you have developed ai & ml
+      - ai & ml expertise
+      - ai & ml expertise in omfys
+      - so tell me about your ai & ml expertise
+      - could you tell me about ai ml expertise
+  - intent: demo_view
+    examples: |
+      - viewed demo
+      - clicked on iframe
+      - on iframe
+      - Clicked on iframe
+  - intent: how_are_you
+    examples: |
+      - how are you
+      - How Are You
+      - HOW ARE YOU
+      - HOW are u
+      - hwu
+      - hwu?
+      - are you good?
+      - are you fine
+      - are you okay?
+  - intent: omfys_wave
+    examples: |
+      - OMFYS WAVE
+      - OMFYS Wave
+      - omfys wave
+      - tell me about omfys Wave
+      - what is omfys wave
+      - omfys WAVE
+  - intent: sales_contact
+    examples: |
+      - how can i get sales team contact
+      - can you give me your sales team contact number
+      - how can i contact to your sales team
+      - bd team contact info
+      - sales contact
+      - can I contact your CEO
+      - can I contact your MD
+      - can I contact your BD team
+      - can I connect your CEO
+      - can I connect your MD
+      - can I connect your BD team
+      - how can I connect your CEO
+      - how can I connect your MD
+      - how can I connect your BD team
+  - intent: product_technology
+    examples: |
+      - on which technology you have build products
+      - the technology on which you have developed products
+      - which technology you used to develope your products
+      - products developed on which technollogy
+      - products of technology
+  - intent: documents
+    examples: |
+      - do you have documents
+      - case papers
+      - test papers
+      - white papers
+      - brouchers
+      - brauchers
+      - documents
+      - omfys docs
+      - omfys documents
+      - articals
+      - articles
+      - article
+      - articles of omfys
+      - brichers of omfys
+      - show me brouchers
+      - show articles
+      - show brouchers
+      - show me brouchers of your solutions
+      - show me usecase documents
+  - intent: details_submitted
+    examples: |
+      - I have submitted details
+      - have submitted details
+      - submitted details
+      - deatils submitted
+  - intent: ask_for_partnership
+    examples: |
+      - Are you partner with Oracle?
+      - Are you preferred partner of Oracle?
+      - Are you partner of Oracle corporation?
+      - are you partner with Oracle corporation.
+      - are you associated with Oracle corporation.
+      - are you preferred partner with Oracle corporation?
+      - Are you partner with Strategic Partner of Automation Anywhere Inc?
+      - Are you strategic partner of Automation Anywhere?
+      - Are you partner of Automation Anywhere Inc.?
+      - are you partner with Automation Anywhere Inc.
+      - are you associated with Automation Anywhere Inc.
+      - are you strategic partner with Automation Anywhere Inc.?
